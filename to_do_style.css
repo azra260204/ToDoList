@@ -1,0 +1,199 @@
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    border: 1px solid gray;
+  }
+
+  /* General Styling */
+body {
+    font-family: "Inter", sans-serif;
+    background: #F8F5F0; /* Light beige tone */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("minimalistic-pastel-colors-line-style-background_1017-43163.avif");
+    background-size:cover;
+  }
+  
+  /* Container */
+  #todo-container {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E2DED7;
+  }
+  
+  /* Header */
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1C1C1E;
+  }
+  
+  /* Input Field */
+  #todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  #input-box {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #F2F0EB;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add Button */
+  #input-button {
+    padding: 10px 15px;
+    background: #FFD700; /* Gold Button */
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  #input-button:hover {
+    background: #FFC107; /* Darker Gold */
+  }
+  
+  /* Task List */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.4s forwards;
+  }
+  
+  /* Checkbox */
+  .task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .task-checkbox:checked {
+    background-color: #FFD700;
+    border-color: #FFD700;
+  }
+  
+  .task-checkbox:checked::after {
+    content: "\f00c"; /* Unicode for FontAwesome 'fa-check' */
+    font-family: "Font Awesome 6 Free"; /* Ensure correct font */
+    font-weight: 900; /* Required for solid icons */
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+ 
+  
+  
+  /* Completed Task Style */
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+    border: 1px solid gray;
+    position: relative;
+  }
+  
+  /* Sparkle Effect */
+  .completed {
+    text-decoration: line-through;
+    color:  #FFD700;
+    border: 1px solid gray;
+    position: relative; /* Ensures the sparkle effect appears inside */
+  }
+  
+  .completed::before {
+    content: "\f005";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 20px;
+    animation: sparkle 2s ease-out;
+  }
+  
+  
+  /* Sparkle animation */
+  @keyframes sparkle {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.5) rotate(10deg);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.8) rotate(-10deg);
+    }
+  }
+  
+  
+  /* Edit & Delete Buttons */
+  .edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .edit-btn:hover {
+    color: #007AFF; /* iOS Blue */
+  }
+  
+  .delete-btn:hover {
+    color: #FF3B30; /* iOS Red */
+  }
+  
+  /* Fade In Animation for Tasks */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
